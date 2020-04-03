@@ -116,15 +116,13 @@ function initMapStuff(){
         map.tap.disable();
     }
 
-    L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}' , {
-    attribution: '&copy; <a href="https://maps.google.com/">Google Maps</a>',
-    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVuYWlkYmFidSIsImEiOiJqc2ZuNkhFIn0.rdicmW4uRhYuHZxEK9dRbg', {
     maxZoom: 8,
     minZoom: 5,
+    id: 'mapbox/light-v9',
     tileSize: 512,
     zoomOffset: -1
 }).addTo(map);
-
 
 // control that shows state info on hover
 var info = L.control();
