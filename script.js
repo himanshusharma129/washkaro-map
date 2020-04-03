@@ -116,11 +116,10 @@ function initMapStuff(){
         map.tap.disable();
     }
 
-    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    subdomains: ['a', 'b', 'c'],
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVuYWlkYmFidSIsImEiOiJqc2ZuNkhFIn0.rdicmW4uRhYuHZxEK9dRbg', {
     maxZoom: 6,
     minZoom: 4,
+    id: 'mapbox/light-v9',
     tileSize: 512,
     zoomOffset: -1
 }).addTo(map);
