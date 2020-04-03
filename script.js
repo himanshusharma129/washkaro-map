@@ -14,7 +14,7 @@ var states_delta = 0;
 // var sheet_id = "ob1elpb"; // Test
 var sheet_id = "2"; // Prod
 
-$.getJSON("https://spreadsheets.google.com/feeds/cells/1xi1Wiazqy6k016CcriOt9kimX7jdq9M3alksLpUKN4U/"+sheet_id+"/public/values?alt=json",
+$.getJSON("https://spreadsheets.google.com/feeds/cells/1u-vdqRjO7IHbZ0OHNcdw6l1mf5OQEir9eL0VbhyDLlI/"+sheet_id+"/public/values?alt=json",
 function(result) {
     entries = result["feed"]["entry"]
     entries.forEach(function(item) {
@@ -109,17 +109,18 @@ function is_touch_device() {
 function initMapStuff(){
     var map = L.map('map').setView([22.5, 82], 3);
     map.setMaxBounds(map.getBounds());
-    map.setView([22.5, 82], 4);
+    map.setView([22.5, 82], 6);
 
     if(is_touch_device()){
-       // map.dragging.disable();
+        map.dragging.disable();
         map.tap.disable();
     }
 
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVuYWlkYmFidSIsImEiOiJqc2ZuNkhFIn0.rdicmW4uRhYuHZxEK9dRbg', {
-    maxZoom: 7,
-    minZoom: 5.5,
-    id: 'mapbox/light-v9',
+    L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}' , {
+    attribution: '&copy; <a href="https://maps.google.com/">Google Maps</a>',
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    maxZoom: 8,
+    minZoom: 5,
     tileSize: 512,
     zoomOffset: -1
 }).addTo(map);
