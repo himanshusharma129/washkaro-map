@@ -1,0 +1,1 @@
+# washkaro-map
