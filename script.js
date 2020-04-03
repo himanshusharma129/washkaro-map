@@ -112,13 +112,13 @@ function initMapStuff(){
     map.setView([22.5, 82], 6);
 
     if(is_touch_device()){
-        map.dragging.disable();
+        // map.dragging.disable();
         map.tap.disable();
     }
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVuYWlkYmFidSIsImEiOiJqc2ZuNkhFIn0.rdicmW4uRhYuHZxEK9dRbg', {
     maxZoom: 8,
-    minZoom: 6,
+    minZoom: 5.5,
     id: 'mapbox/light-v9',
     tileSize: 512,
     zoomOffset: -1
